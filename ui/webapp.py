@@ -10,7 +10,7 @@ def annotate_answer(answer, context):
     annotated_text(context[:start_idx], (answer, "ANSWER", "#8ef"), context[end_idx:])
 
 
-st.write("# Haystack Demo")
+st.write("# find.IT Demo")
 st.sidebar.header("Options")
 top_k_reader = st.sidebar.slider("Max. number of answers", min_value=1, max_value=10, value=3, step=1)
 top_k_retriever = st.sidebar.slider(
@@ -21,9 +21,7 @@ run_query = st.button("Run")
 debug = st.sidebar.checkbox("Show debug info")
 if run_query:
     with st.spinner(
-        "Performing neural search on documents... 🧠 \n "
-        "Do you want to optimize speed or accuracy? \n"
-        "Check out the docs: https://haystack.deepset.ai/docs/latest/optimizationmd "
+        "Performing neural search on documents... 🧠"
     ):
         results, raw_json = haystack_query(question, top_k_reader=top_k_reader, top_k_retriever=top_k_retriever)
     st.write("## Retrieved answers:")
