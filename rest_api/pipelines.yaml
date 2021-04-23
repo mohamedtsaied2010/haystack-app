@@ -14,8 +14,8 @@ components:    # define all the building-blocks for Pipeline
     #type: FARMReader    # Haystack Class name for the component
     type: TransformersReader
     params:
-      model_name_or_path: deepset/roberta-base-squad2
-      tokenizer: deepset/roberta-base-squad2
+      model_name_or_path: deepset/xlm-roberta-large-squad2
+      tokenizer: deepset/xlm-roberta-large-squad2
       use_gpu: -1
   - name: TextFileConverter
     type: TextConverter
